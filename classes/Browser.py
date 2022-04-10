@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+import time
 
 class Browser:
     def __init__(self):
@@ -52,6 +53,7 @@ class Browser:
 
     def get_word_results(self, word):
         self.type_word(word)
+        time.sleep(2) # TODO: check animation has finished instead
         self.words_entered += 1
 
         # results
